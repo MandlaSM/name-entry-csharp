@@ -87,4 +87,6 @@ app.MapGet("/names", () =>
     return Results.Content(html, "text/html");
 });
 
-app.Run();
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Run($"http://0.0.0.0:{port}");
+
