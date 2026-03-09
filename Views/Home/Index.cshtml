@@ -4,18 +4,51 @@
     ViewData["Title"] = "Save My Name";
 }
 
-<h1>Save My Name</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Save My Name</title>
 
-<form method="post">
-    <input type="text" name="name" placeholder="Enter your name" />
-    <button type="submit">Save</button>
-</form>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<h2>Saved names</h2>
+</head>
 
-<ul>
-@foreach (var person in Model)
-{
-    <li>@person.Name</li>
-}
-</ul>
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <h2 class="card-title mb-4 text-center">Save My Name</h2>
+
+            <form method="post">
+                <div class="input-group mb-3">
+                    <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
+                    <button class="btn btn-primary" type="submit">Save</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="card mt-4 shadow-sm">
+        <div class="card-body">
+
+            <h4 class="card-title">Saved Names</h4>
+
+            <ul class="list-group">
+                @foreach (var person in Model)
+                {
+                    <li class="list-group-item">@person.Name</li>
+                }
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
