@@ -1,0 +1,21 @@
+@model List<NameEntryApp.Models.Person>
+
+@{
+    ViewData["Title"] = "Save My Name";
+}
+
+<h1>Save My Name</h1>
+
+<form method="post">
+    <input type="text" name="name" placeholder="Enter your name" />
+    <button type="submit">Save</button>
+</form>
+
+<h2>Saved names</h2>
+
+<ul>
+@foreach (var person in Model)
+{
+    <li>@person.Name</li>
+}
+</ul>
